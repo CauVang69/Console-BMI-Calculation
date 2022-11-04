@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Compare BMI</title>
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+  </head>
+  <body>
+    <h1>Compare BMI between my 2 friend: Toan and Minh</h1>
+    <p>I will take in the input of Toan and Minh's body masses to put it into variables, then calculate their BMI and compare their BMI using if/else statement.</p>
+    <p> After that, I will print the result out to the console.</p>
+    <hr>
+    <!--Declare variables-->
+    <script>
+      var toan_height, toan_weight, toanBMI, minh_height, minh_weight, minhBMI;
+    </script>
+    <!--User input from web and save the value to a variable-->
+    <!--Toan input-->
+    <p>Toan, please enter your weight in kg: </p>
+    <input id="toanw">
+    <p>Toan, please enter your height in m: </p>
+    <input id="toanh">
+    <hr>
+    <button type="button" onclick="Toandata()">Upload to console</button>      
+    <hr>
+    <script>
+      function Toandata() {
+        toan_weight = document.getElementById('toanw').value;
+        console.log("Toan's weight is: " + toan_weight + " kg");
+        toan_height = document.getElementById('toanh').value;
+        console.log("Toan's height is: " + toan_height + " m");
+
+        toanBMI = toan_weight/ toan_height**2;
+        console.log("Toan's BMI is: " + toanBMI);
+      }
+    </script>
+
+    
+    <!--Minh input-->
+    <p>Minh, please enter your weight in kg: </p>
+    <input id="minhw">
+    <p>Minh, please enter your height in m: </p>
+    <input id="minhh">
+    <hr>
+    <button type="button" onclick="Minhdata()">Upload to console</button>      
+    <hr>
+    <script>
+      function Minhdata() {
+        minh_weight = document.getElementById('minhw').value;
+        console.log("Minh's weight is: " + minh_weight + " kg");
+        minh_height = document.getElementById('minhh').value;
+        console.log("Minh's height is: " + minh_height + " kg");
+
+        minhBMI = minh_weight/ minh_height**2;
+        console.log("Minh's BMI is: " + minhBMI);
+      }
+    </script>
+
+    <!--Compare BMI-->
+    <h2>After uploading all your data, proceed to compare BMI</h2>
+    <hr>
+    <button type="button" onclick="bmicompare()">Click to compare BMI</button>  
+    <hr>
+    <script>
+      function bmicompare(){
+        if (toanBMI > minhBMI) {
+          alert("Toan's BMI is higher than Minh's BMI");
+          console.log("Oh, Toan is fatter than Minh");
+        } 
+        if (toanBMI < minhBMI) {
+          alert("Toan's BMI is lower than Minh's BMI");
+          console.log("Oh, Toan is thinner than Minh. Eat more.");
+        } 
+        if (toanBMI == minhBMI) {
+          alert("Both BMI is the same");
+          console.log("Toan and Minh has the same BMI!");
+        } 
+      } 
+    </script>
+
+  
+</body></html>
